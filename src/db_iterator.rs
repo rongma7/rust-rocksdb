@@ -471,6 +471,18 @@ impl<'a, D: DBAccess> DBIteratorWithThreadMode<'a, D> {
             }
         };
     }
+
+    pub fn set_mode_start_with_direction(&mut self, direction: Direction) {
+        self.done = false;
+        self.direction = direction;
+        self.raw.seek_to_first();
+    }
+
+    pub fn set_mode_end_with_direction(&mut self, direction: Direction) {
+        self.done = false;
+        self.direction = direction;
+        self.raw.seek_to_last();
+    }
 }
 
 impl<'a, D: DBAccess> Iterator for DBIteratorWithThreadMode<'a, D> {

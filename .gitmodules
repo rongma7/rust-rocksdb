@@ -3,7 +3,8 @@
 	url = https://github.com/google/snappy.git
 [submodule "rocksdb_sys/rocksdb"]
 	path = librocksdb-sys/rocksdb
-	url = https://github.com/facebook/rocksdb.git
+	url = https://github.com/rongma7/rocksdb.git
+ 	commit = 0bb38ab
 [submodule "librocksdb-sys/lz4"]
 	path = librocksdb-sys/lz4
 	url = https://github.com/lz4/lz4.git
