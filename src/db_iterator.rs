@@ -483,6 +483,14 @@ impl<'a, D: DBAccess> DBIteratorWithThreadMode<'a, D> {
         self.direction = direction;
         self.raw.seek_to_last();
     }
+
+    pub fn seek(&mut self, key: &[u8]) {
+        self.raw.seek(key);
+    }
+
+    pub fn seek_for_prev(&mut self, key: &[u8]) {
+        self.raw.seek_for_prev(key);
+    }
 }
 
 impl<'a, D: DBAccess> Iterator for DBIteratorWithThreadMode<'a, D> {
